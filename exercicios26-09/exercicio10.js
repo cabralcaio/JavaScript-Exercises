@@ -12,7 +12,8 @@
 
 const tipo = parseInt(prompt("Digite o tipo de pulverização : \n Digite 1 para ervas daninhas R$ 50,00 por acre;\n Digite 2 para  gafanhotos R$ 100,00 por acre;\n Digite 3 para  broca R$ 150,00 por acre;\n Digite 4 para  todos acima R$ 250,00 por acre."))
 const area = parseInt(prompt("Digite a área (em acres) a ser pulverizada: "));
-const valorAcre = 0;
+let valorAcre = 0;
+let resultado = 0;
 
 switch (tipo){
     case 1 :
@@ -33,12 +34,12 @@ switch (tipo){
 }
 
 if(area > 1000){
-    const resultado = (((valorAcre * area * 0.95) - 750) * 0.9) + 750;
+    resultado = (((valorAcre * area * 0.95) - 750) * 0.9) + 750;
 } else {
     if(area * valorAcre > 750) {
-        const resultado = ((area * valorAcre - 750) * 0.9) + 750;
+        resultado = ((area * valorAcre - 750) * 0.9) + 750;
     } else {
-        const resultado = area * valorAcre
+        resultado = area * valorAcre
     }
 }
 
